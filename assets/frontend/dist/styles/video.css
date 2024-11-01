@@ -1,0 +1,83 @@
+/**
+// Copyright Darko Gjorgjijoski <info@codeverve.com>
+// 2020. All Rights Reserved.
+// This file is licensed under the GPLv2 License.
+// License text available at https://opensource.org/licenses/gpl-2.0.php
+ */
+.vimeify-preview-wrap {
+  max-width: 100%;
+}
+
+.vimeify-vimeo-preview {
+  width: 100%;
+}
+
+.vimeify-embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.vimeify-embed-container iframe, .vimeify-embed-container object, .vimeify-embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vimeify-embed-container iframe {
+  padding: 2px;
+  background: #000000;
+}
+
+.vimeify-embed-modern {
+  align-items: center;
+  background-color: rgb(245, 246, 247);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.vimeify-embed-modern-video-overlay, .vimeify-embed-modern-video-preview-image {
+  background-size: cover;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.vimeify-embed-modern-video-preview-image {
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.vimeify-embed-modern-video-overlay {
+  background-color: rgba(20, 20, 20, 0.47);
+}
+
+.vimeify-embed-modern-video-overlay-icon {
+  color: #fff;
+  cursor: pointer;
+  font-size: 60px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.vimeify-embed-modern iframe {
+  border: none;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 3,
+	"name": "vimeify/video",
+	"title": "Vimeify Vimeo Video",
+	"textdomain": "vimeify",
+	"icon": "video-alt",
+	"category": "media",
+	"example": {},
+	"editorScript": "file:./index.js",
+	"editorStyle": [
+		"vimeify-video-block"
+	]
+}

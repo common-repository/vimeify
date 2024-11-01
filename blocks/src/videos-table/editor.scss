@@ -1,0 +1,143 @@
+/********************************************************************
+ * Copyright (C) 2024 Darko Gjorgjijoski (https://darkog.com/)
+ * Copyright (C) 2024 IDEOLOGIX MEDIA Dooel (https://ideologix.com/)
+ *
+ * This file is property of IDEOLOGIX MEDIA Dooel (https://ideologix.com)
+ * This file is part of Vimeify Plugin - https://wordpress.org/plugins/vimeify/
+ *
+ * Vimeify - Formerly "WP Vimeo Videos" is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 2 of the License,
+ * or (at your option) any later version.
+ *
+ * Vimeify - Formerly "WP Vimeo Videos" is distributed in the hope that it
+ * will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this plugin. If not, see <https://www.gnu.org/licenses/>.
+ *
+ * Code developed by Darko Gjorgjijoski <dg@darkog.com>.
+ **********************************************************************/
+
+/** block editor */
+.vimeify-inspector-controls-block {
+  width: 100%;
+  padding: 20px;
+}
+.vimeify-inspector-controls-block fieldset {
+  margin-bottom: 10px;
+}
+
+
+/** Table styling */
+.vimeify-table-wrapper {
+  margin-bottom: 20px;
+}
+.vimeify-table {
+  margin-bottom: 10px;
+}
+.vimeify-table tr th {
+  text-align: left;
+}
+.vimeify-table tr td.vimeify-row-actions, .vimeify-table tr th.vimeify-head-actions  {
+  text-align:center;
+}
+
+.vimeify-table-pagination-list {
+  display: inline-block;
+  padding-left: 0 !important;
+  margin-left: 0!important;
+  margin-top: 10px !important;
+  margin-bottom: 0!important;
+}
+.vimeify-table-pagination {
+  text-align: center;
+}
+.vimeify-table-pagination-list li:last-child {
+  margin-right: 0;
+}
+.vimeify-table-pagination-list li {
+  display: inline-block;
+  margin-right: 2px;
+  margin-left: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: auto;
+}
+
+.vimeify-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Zebra striping */
+.vimeify-table-wrapper tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+.vimeify-table-wrapper th {
+  background: #f6f6f6;
+  color: #000;
+  font-weight: bold;
+}
+
+.vimeify-table-wrapper td, th {
+  padding: 10px;
+  border: 1px solid #f6f6f6;
+  text-align: left;
+  font-size: 18px;
+}
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  .vimeify-table-wrapper table {
+    width: 100%;
+  }
+
+  /* Force table to not be like tables anymore */
+  .vimeify-table-wrapper table, .vimeify-table-wrapper thead, .vimeify-table-wrapper tbody, .vimeify-table-wrapper th, .vimeify-table-wrapper td, .vimeify-table-wrapper tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  .vimeify-table-wrapper thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .vimeify-table-wrapper tr { border: 1px solid #e8e8e8; }
+
+  .vimeify-table-wrapper td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .vimeify-table-wrapper td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    /* Label the data */
+    content: attr(data-column);
+
+    color: #000;
+    font-weight: bold;
+  }
+
+}
